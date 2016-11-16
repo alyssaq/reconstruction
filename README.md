@@ -1,6 +1,6 @@
 # 3D reconstruction from multiple 2D images
 
-The current structure from motion (SFM) module only runs in Linux.
+The current structure from motion (SFM) module from [openCV's extra modules](https://github.com/opencv/opencv_contrib) only runs on Linux.
 
 As such, I used [docker](https://www.docker.com) on my Mac to reconstruct the 3D points.
 
