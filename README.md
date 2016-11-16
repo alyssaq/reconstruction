@@ -1,6 +1,7 @@
 # 3D reconstruction from multiple 2D images
 
 The current structure from motion (SFM) module only runs in Linux.
+
 As such, I used [docker](https://www.docker.com) on my Mac to reconstruct the 3D points.
 
 ## Docker Dev Environment
@@ -13,6 +14,7 @@ docker run -it -v <path_to_reconstruction_folder>:/app python-opencv /bin/bash
 
 ## Run
 1) Download 2D temple images from <http://vision.middlebury.edu/mview/data>
+
 2) Save list of images to `images.txt`:
 ```sh
 # images.txt will contain lines of filepath
