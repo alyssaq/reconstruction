@@ -43,3 +43,6 @@ g++ -I /usr/local/Cellar/eigen/3.3.4/include/eigen3 eigen_test.cpp -o eigen
 # Test with full includes
 g++ example_sfm.cpp -I /usr/include/eigen3/ -I/usr/local/include/opencv -I/usr/local/include/opencv2 -L /usr/local/share/OpenCV/3rdparty/lib/ -L/usr/local/lib/ -L /usr/include/eigen3/ -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_ml -lopencv_optflow -lopencv_sfm -lopencv_viz
 ```
+
+## License
+[MIT](http://alyssaq.github.io/mit-license/)
