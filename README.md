@@ -27,7 +27,8 @@ sed -i -e 's/^/\/app\//' images.txt
 g++ example_sfm.cpp  -L/usr/local/lib/  -lopencv_core -lopencv_sfm
 ```
 4) Run the example with the list of images
-```
+```sh
+./a.out # Prints the help text
 ./a.out images.txt 350 240 360
 ```
 
