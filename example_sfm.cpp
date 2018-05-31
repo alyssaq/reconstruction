@@ -72,7 +72,6 @@ int main(int argc, char* argv[])
   cout << "Estimated 3D points: " << points3d_estimated.size() << endl;
   cout << "Estimated cameras: " << Rs_est.size() << endl;
   cout << "Refined intrinsics: " << endl << K << endl << endl;
-  cout << "3D Visualization: " << endl;
   cout << "============================" << endl;
 
   // recover estimated points3d
