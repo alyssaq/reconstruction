@@ -1,6 +1,6 @@
 # 3D reconstruction from multiple 2D images
 
-The current structure from motion (SFM) module from [openCV's extra modules](https://github.com/opencv/opencv_contrib) only runs on Linux.
+The current [structure from motion (SFM)](https://github.com/opencv/opencv_contrib/tree/master/modules/sfm) module from [openCV's extra modules](https://github.com/opencv/opencv_contrib) only runs on Linux.
 
 As such, I used [docker](https://www.docker.com) on my Mac to reconstruct the 3D points.
 
@@ -33,9 +33,9 @@ g++ example_sfm.cpp  -L/usr/local/lib/  -lopencv_core -lopencv_sfm -lopencv_viz
 
 ## Test
 ```sh
-# Test eigen
-g++ -I /usr/local/Cellar/eigen/3.2.10/include/eigen3/ eigen_test.cpp -o eigen
-./a.out
+# Test eigen (http://eigen.tuxfamily.org/dox/GettingStarted.html)
+g++ -I /usr/local/Cellar/eigen/3.3.4/include/eigen3 eigen_test.cpp -o eigen
+./eigen
 
 
 # Test with full includes
