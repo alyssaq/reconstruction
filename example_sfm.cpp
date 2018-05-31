@@ -1,12 +1,9 @@
 #define CERES_FOUND true
 
 #include <opencv2/sfm.hpp>
-#include <opencv2/calib3d.hpp>
-#include <opencv2/core.hpp>
 #include <iostream>
 #include <fstream>
-#include <string>
-#include <iomanip>
+
 using namespace std;
 using namespace cv;
 using namespace cv::sfm;
@@ -56,7 +53,7 @@ int main(int argc, char* argv[])
 
   // Parse the image paths
   vector<String> images_paths;
-  getdir( argv[1], images_paths );
+  getdir(argv[1], images_paths);
 
   // Build instrinsics
   float f  = atof(argv[2]),
@@ -84,12 +81,13 @@ int main(int argc, char* argv[])
   points_file.open("points.txt");
   points_file.precision(std::numeric_limits<double>::digits10);
   for (int i = 0; i < points3d_estimated.size(); ++i) {
-    std::cout << points3d_estimated[i] << std::endl;
-    for(mat_it = points3d_estimated[i].begin<double>(); mat_it != points3d_estimated[i].end<double>(); mat_it++){
+    cout << points3d_estimated[i] << endl;
+    for(mat_it = points3d_estimated[i].begin<double>(); mat_it != points3d_estimated[i].end<double>(); mat_it++) {
       points_file << *mat_it << " ";
     }
     points_file << "\n";
   }
+
   cout << "Done. Points saved to points.txt" << endl;
   points_file.close();
 
