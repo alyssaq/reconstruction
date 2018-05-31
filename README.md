@@ -2,14 +2,15 @@
 
 The current [structure from motion (SFM)](https://github.com/opencv/opencv_contrib/tree/master/modules/sfm) module from [openCV's extra modules](https://github.com/opencv/opencv_contrib) only runs on Linux.
 
-As such, I used [docker](https://www.docker.com) on my Mac to reconstruct the 3D points.
+As such, I used [docker](https://www.docker.com) on my Mac to reconstruct the 3D points.   
+Current docker environment uses Ceres Solver 1.14.0 and OpenCV 3.4.1
 
 ## Docker Dev Environment
 ```sh
 # Build the docker image
-docker build -t python-opencv .
+docker build -t opencv-sfm .
 # Run the docker container mounting `reconstruction` folder to `/app`
-docker run -it -v <path_to_reconstruction_folder>:/app python-opencv /bin/bash
+docker run -it -v <path_to_reconstruction_folder>:/app opencv-sfm /bin/bash
 ```
 
 ## Run
