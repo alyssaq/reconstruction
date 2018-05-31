@@ -24,7 +24,7 @@ sed -i -e 's/^/\/app\//' images.txt
 ```
 3) In the docker container, compile the cpp file
 ```
-g++ example_sfm.cpp  -L/usr/local/lib/  -lopencv_core -lopencv_sfm -lopencv_viz
+g++ example_sfm.cpp  -L/usr/local/lib/  -lopencv_core -lopencv_sfm
 ```
 4) Run the example with the list of images
 ```

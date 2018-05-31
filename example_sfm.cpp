@@ -1,7 +1,6 @@
 #define CERES_FOUND true
 
 #include <opencv2/sfm.hpp>
-#include <opencv2/viz.hpp>
 #include <opencv2/calib3d.hpp>
 #include <opencv2/core.hpp>
 #include <iostream>
@@ -28,7 +27,8 @@ static void help() {
       << "------------------------------------------------------------------------------------\n\n"
       << endl;
 }
-int getdir(const string _filename, vector<string> &files)
+
+int getdir(const string _filename, vector<String> &files)
 {
   ifstream myfile(_filename.c_str());
   if (!myfile.is_open()) {
@@ -39,11 +39,12 @@ int getdir(const string _filename, vector<string> &files)
     string line_str, path_to_file = _filename.substr(0, found);
     while ( getline(myfile, line_str) ) {
       cout << line_str << endl;
-      files.push_back(line_str);
+      files.push_back(String(line_str));
     }
   }
   return 1;
 }
+
 int main(int argc, char* argv[])
 {
   // Read input parameters
@@ -52,9 +53,11 @@ int main(int argc, char* argv[])
     help();
     exit(0);
   }
+
   // Parse the image paths
-  vector<string> images_paths;
+  vector<String> images_paths;
   getdir( argv[1], images_paths );
+
   // Build instrinsics
   float f  = atof(argv[2]),
         cx = atof(argv[3]), cy = atof(argv[4]);
@@ -74,12 +77,6 @@ int main(int argc, char* argv[])
   cout << "Refined intrinsics: " << endl << K << endl << endl;
   cout << "3D Visualization: " << endl;
   cout << "============================" << endl;
-  viz::Viz3d window("Coordinate Frame");
-             window.setWindowSize(Size(500,500));
-             window.setWindowPosition(Point(150,150));
-             window.setBackgroundColor(); // black by default
-  // Create the pointcloud
-  cout << "Recovering points  ... ";
 
   // recover estimated points3d
   ofstream points_file;
